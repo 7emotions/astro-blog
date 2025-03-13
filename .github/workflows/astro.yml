@@ -1,14 +1,10 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [main]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
@@ -33,7 +29,10 @@ jobs:
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
           git checkout --orphan gh-pages
           git rm -rf .
-          mv dist/. .
+          mkdir tmp
+          mv dist/* tmp/
+          mv tmp/* .
+          rmdir tmp
           git add .
           git config user.email "github-actions@github.com" # 设置邮箱
           git config user.name "github-actions" # 设置用户名
