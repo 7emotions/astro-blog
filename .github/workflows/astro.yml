@@ -33,7 +33,7 @@ jobs:
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
           git checkout --orphan gh-pages
           git rm -rf .
-          mv dist/ .
+          mv dist/. .
           git add .
           git config user.email "github-actions@github.com" # 设置邮箱
           git config user.name "github-actions" # 设置用户名
