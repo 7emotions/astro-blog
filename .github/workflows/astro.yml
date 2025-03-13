@@ -26,18 +26,25 @@ jobs:
           path: . # The root location of your Astro project inside the repository. (optional)
           node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
           package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      - name: Deploy to gh-pages Branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git"
+          git checkout --orphan gh-pages
+          git rm -rf .
+          cp -r dist/. .
+          git add .
+          git commit -m "Deploy to gh-pages branch"
+          git push origin gh-pages --force
+          
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages # 发布到的分支
-          folder: dist # 构建产物所在的目录
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   steps:
-      # - name: Deploy to GitHub Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v4
