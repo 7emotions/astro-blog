@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy to Pages
 
 on:
   push:
@@ -36,5 +36,5 @@ jobs:
           user: ${{ secrets.ATOM_USER }}
           repo: 7emotions/blog
           github_domain: atomgit.com
-          branch: atom_pages
+          branch: pages
           folder: dist
