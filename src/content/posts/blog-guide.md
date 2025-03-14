@@ -1,6 +1,6 @@
 ---
 title: 国内自动化静态博客搭建
-published: 2025-3-14
+published: 2025-03-14
 description: "采用Github Action向AtomGit部署Fuwari静态博客"
 image: "assets/images/post/blog-guide/1.png"
 tags: [静态博客, Github Action, Fuwari]
