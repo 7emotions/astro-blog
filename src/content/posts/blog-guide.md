@@ -29,7 +29,7 @@ lang: ""
 
 ## Node.js （可选）
 
-`Node.js` 是`Astro`的运行环境，你需要安装`Node.js 20`。你可以从[Node.js官网](https://nodejs.org/)下载并安装。
+`Fuwari`从`Node.js`构建 ，你需要安装`Node.js Version 20`。你可以从[Node.js官网](https://nodejs.org/)下载并安装。
 
 # 开始
 
