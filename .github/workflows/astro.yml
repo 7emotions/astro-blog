@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
@@ -29,11 +29,7 @@ jobs:
           pnpm add sharp
       - name: Build dist
         run: pnpm run build
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
+      - name: Publish branch
         uses: 7emotions/branch-pub@main
         with:
           token: ${{ secrets.ATOM_TOKEN }}
