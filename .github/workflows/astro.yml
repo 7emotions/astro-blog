@@ -1,35 +1,38 @@
-name: Deploy to GitHub Pages
+name: Deploy to Pages
 
 on:
   push:
-    branches: [main]
+    branches: [atomgit]
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 jobs:
-  build:
+  deployment:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site output
-        uses: withastro/action@v2
         with:
-          path: . # The root location of your Astro project inside the repository. (optional)
-          node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 18. (optional)
-          package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-      
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          ref: atomgit
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependence
+        run: |
+          npm install -g pnpm
+          pnpm install
+          pnpm add sharp
+      - name: Build dist
+        run: pnpm run build
+      - name: Publish branch
+        uses: 7emotions/branch-pub@main
+        with:
+          token: ${{ secrets.ATOM_TOKEN }}
+          user: ${{ secrets.ATOM_USER }}
+          repo: 7emotions/blog
+          github_domain: atomgit.com
+          branch: pages
+          folder: dist

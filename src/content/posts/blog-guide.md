@@ -9,15 +9,13 @@ draft: false
 lang: ""
 ---
 
-# 国内自动化静态博客搭建
+# 前言
 
-## 前言
+最近在搭建静态博客，发现国内访问`Github Pages`的速度很慢，于是想通过国内的服务器来部署静态博客。经过一番搜索，发现`AtomGit`是一个很好的选择，它支持`Pages`服务，并且在国内有较好的访问速度。
 
-最近在搭建静态博客，发现国内访问`Github Action`的速度很慢，于是想通过国内的服务器来部署静态博客。经过一番搜索，发现`AtomGit`是一个很好的选择，它支持`Github Action`，并且在国内有较好的访问速度。
+# 准备
 
-## 准备
-
-###  AtomGit
+##  AtomGit
 
 [AtomGit](https://atomgit.com/)是国内由开放原子基金会运营的`Git`托管平台，它支持`Pages`服务，并且具有良好的访问速度。
 
@@ -25,17 +23,17 @@ lang: ""
 
 > 开启Pages服务后，AtomGit会自动为你的仓库分配一个uri，例如`https://<username>.atomgit.net/<repo-name>`。你可以通过这个url来访问你的静态博客。
 
-### Github
+## Github
 
 你需要一个`Github`账号，并且需要创建一个仓库，用于存放静态博客的源文件。这个仓库不需要开启`Pages`服务。从该仓库中，你可以通过`Github Action`来生成静态博客的站点文件，并将其部署到`AtomGit`上。
 
-### Node.js
+## Node.js （可选）
 
-`Node.js` 是`Astro`的运行环境，你需要安装`Node.js 20`。你可以从[Node.js官网](https://nodejs.org/)下载并安装。
+`Fuwari`从`Node.js`构建 ，你需要安装`Node.js Version 20`。你可以从[Node.js官网](https://nodejs.org/)下载并安装。
 
-## 部署
+# 开始
 
-### 1. Fork Fuwari
+## 1. Fork Fuwari
 
 首先，你需要Fork [Fuwari](https://github.com/saicaca/fuwari) 到你的Github账号下。`Fuwari`是基于[Astro](https://astro.build/)的静态博客模板。
 
@@ -50,7 +48,7 @@ lang: ""
 - [x] 搜索
 - [ ] 文内目录
 
-### 2. 修改配置文件
+## 2. 修改配置文件
 
 你可以通过配置文件 `src/config.ts` 自定义博客。以我的配置文件为例。
 
@@ -138,7 +136,7 @@ export const licenseConfig: LicenseConfig = {
 
 ```
 
-### 3. 创建文章
+## 3. 创建文章
 
 `Astro`框架是基于`Markdown`的，所以你可以在`src/content/posts/`目录中创建新的`Markdown`文件，编辑文章内容。 你也可以在终端中执行 `pnpm new-post <filename>` 创建新文章，并在` src/content/posts/ `目录中编辑。
 
@@ -158,7 +156,7 @@ lang: jp      //仅当文章语言与 `config.ts` 中的网站语言不同时需
 
 ```
 
-### 4. 本地构建（可选）
+## 4. 本地构建（可选）
 
 安装依赖
 
@@ -179,7 +177,7 @@ pnpm run build
 ```
 
 
-### 5. 部署
+## 5. 部署
 
 修改在根目录下的 `astro.config.mjs` 
 
@@ -244,7 +242,7 @@ jobs:
 
 在`AtomGit`的仓库中，点击设置->`Pages`，选择`pages`分支，即可在`https://<username>.atomgit.net/<repo-name>`访问你的博客。
 
-## 参考
+# 参考
 
 - [新一代静态博客框架Astro的部署优化指南与使用体验](https://www.lapis.cafe/posts/technicaltutorials/%E6%96%B0%E4%B8%80%E4%BB%A3%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6astro%E7%9A%84%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97%E4%B8%8E%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C/)
 - [AtomGit Pages](https://docs.atomgit.com/app/pageshelp)
