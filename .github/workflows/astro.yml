@@ -32,9 +32,9 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: 7emotions/branch-pub@main
         with:
-          TOKEN: ${{ secrets.ATOM_TOKEN }}
-          USER: ${{ secrets.ATOM_USER }}
-          REPO: 7emotions/blog
-          GITHUB_DOMAIN: atomgit.com
-          BRANCH: atom_pages
-          FOLDER: dist
+          token: ${{ secrets.ATOM_TOKEN }}
+          user: ${{ secrets.ATOM_USER }}
+          repo: 7emotions/blog
+          github_domain: atomgit.com
+          branch: atom_pages
+          folder: dist
