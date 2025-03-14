@@ -29,7 +29,7 @@ lang: ""
 
 你需要一个`Github`账号，并且需要创建一个仓库，用于存放静态博客的源文件。这个仓库不需要开启`Pages`服务。从该仓库中，你可以通过`Github Action`来生成静态博客的站点文件，并将其部署到`AtomGit`上。
 
-### Node.js
+### Node.js （可选）
 
 `Node.js` 是`Astro`的运行环境，你需要安装`Node.js 20`。你可以从[Node.js官网](https://nodejs.org/)下载并安装。
 
