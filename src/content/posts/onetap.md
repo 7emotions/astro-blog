@@ -3,7 +3,7 @@ title: 国内静态博客一键部署
 published: 2025-03-14
 description: "Docker或Github Action一键部署Fuwari静态博客"
 image: "images/blog-guide/1.png"
-tags: [静态博客, Github Action, Fuwari，Docker]
+tags: [静态博客, Github Action, Fuwari, Docker]
 category: "建站"
 draft: false
 lang: ""
