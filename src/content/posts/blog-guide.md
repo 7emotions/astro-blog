@@ -189,7 +189,7 @@ export default defineConfig({
     // ...
 })
 ```
-将 `base` 修改为你的仓库名称，将 `site` 修改为你的用户名。例如，如果你的用户名是 `lorenzofeng`，仓库名称是 `blog`，那么 `base` 应该是 `/blog`，`site` 应该是 `https://lorenzofeng.atomgit.net`。
+将 `base` 修改为你的仓库名称，将 `site` 修改为你的用户名。例如，如果你的用户名是 `lorenzofeng`，仓库名称是 `blog`，那么 `base` 应该是 `/blog`，`site` 应该是 `https://lorenzofeng.atomgit.net/blog`。
 
 在根目录新建 `.github/workflows/astro.yml`， 并写入以下内容
 
