@@ -87,6 +87,7 @@ const bannerOffset =
 		<meta property="og:site_name" content={siteConfig.title}>
 		<meta property="og:url" content={Astro.url}>
 		<meta property="og:title" content={pageTitle}>
+		<meta itemprop="image" content="https://7emotions.atomgit.net/blog/demo-banner.png">
 		<meta property="og:image" content="https://7emotions.atomgit.net/blog/demo-banner.png">
 		<meta property="og:description" content={description || pageTitle}>
 		{setOGTypeArticle ? (
@@ -152,6 +153,7 @@ const bannerOffset =
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}
 		  data-overlayscrollbars-initialize
 	>
+		<img style="height: 0; width: 0; overflow: hidden; display: block" src="https://7emotions.atomgit.net/blog/demo-banner.png" />
 		<ConfigCarrier></ConfigCarrier>
 		<slot />
 
