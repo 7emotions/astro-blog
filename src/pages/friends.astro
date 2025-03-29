@@ -26,6 +26,13 @@ const items = [
     siteurl: 'https://www.lapis.cafe',
     tags: ['博客'],
   },
+  {
+    title: "Qnury.e's",
+    imgurl: 'https://qnury.es/_next/image?url=%2Fassets%2Fimages%2Fqnurye.png&w=640&q=75',
+    desc: 'Qnurye 的个人网站',
+    siteurl: 'https://qnury.es',
+    tags: ['博客'],
+  }
 ]
 ---
 <MainGridLayout title={i18n(I18nKey.friends)} description={i18n(I18nKey.friends)}>
@@ -68,4 +75,22 @@ const items = [
             </Markdown>
         </div>
     </div>
+
+
+    <div style="margin-top: 20px;"></div>
+    <script src="https://giscus.app/client.js"
+        data-repo="7emotions/commentRepo"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNzYyNDE2Nzk="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEHcdD84CoB8c"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="light"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+    </script>
 </MainGridLayout>
