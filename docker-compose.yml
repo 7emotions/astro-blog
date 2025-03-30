@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+    preview:
+        container_name: preview
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: preview
+        ports:
+            - "4321:4321"
+        volumes:
+            - .:/app

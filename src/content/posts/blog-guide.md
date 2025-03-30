@@ -21,6 +21,8 @@ lang: ""
 
 你需要先在`AtomGit`上注册一个账号，并创建一个仓库，用于部署静态博客的站点构建文件。并且，该仓库需要开启`Pages`服务。参考[AtomGit Pages](https://docs.atomgit.com/app/pageshelp)。
 
+
+> [!NOTE]
 > 开启Pages服务后，AtomGit会自动为你的仓库分配一个uri，例如`https://<username>.atomgit.net/<repo-name>`。你可以通过这个url来访问你的静态博客。
 
 ## Github

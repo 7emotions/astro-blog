@@ -20,7 +20,7 @@ lang: ""
 
 # 云服务器配置
 
-为云服务添加出站规则，开放443端口。
+为云服务添加出站规则，开放`443`端口与`80`端口。
 
 # `Caddy`配置
 
@@ -32,6 +32,7 @@ yours.domain.com {
 }
 ```
 
+> [!NOTE]
 > 请修改`yours.domain.com`为你的域名。
 
 # `Nginx`配置
@@ -50,7 +51,7 @@ http {
 
         location / {
             proxy_pass https://you.atomgit.net/your-blog/;
-            proxy_set_header Host 7emotions.atomgit.net;
+            proxy_set_header Host you.atomgit.net;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
@@ -62,7 +63,7 @@ http {
     }
 }
 ```
-
+> [!NOTE]
 > 请修改`yours.domain.com`为你的域名，`you.atomgit.net`为你的AtomGit Pages的域名，`your-blog`为你的博客的目录。
 
 # `Docker`配置
@@ -104,5 +105,3 @@ docker-compose up -d
 ```
 
 访问`https://yours.domain.com/`以查看博客。
-
-```
