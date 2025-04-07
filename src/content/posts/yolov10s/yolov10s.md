@@ -3,7 +3,7 @@ title: 'yolov10模型Docker训练环境搭建'
 published: 2025-04-17
 description: '使用Docker容器化搭建yolov10训练环境'
 cover: './labels.jpg'
-tags: 
+tags: ["AI","yolov10"] 
 category: '人工智能'
 draft: false
 lang: ''
@@ -236,4 +236,3 @@ int main() {
     return 0;
 }
 ```
-
