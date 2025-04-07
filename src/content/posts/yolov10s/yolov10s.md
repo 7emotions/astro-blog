@@ -40,7 +40,7 @@ git clone https://github.com/7emotions/robot-vision.git
 运行`split.py`划分数据集
 
 ```shell
-docker-compose run trainer python split.py
+docker-compose run trainer python3 split.py
 ```
 
 `split.py`会将数据集的`80%`划分为**训练集**，`20%`划分为**验证集**。对于缺失`labels`的负样本，会新建空白`label`。
@@ -93,7 +93,7 @@ names: ["red target", "blue area", "blue target", "starting point", "black targe
 
 > [!NOTE]
 > 若更换预训练权重文件，请在`compose.yml`中替换`yolov10s.pt`。
->
+
 ## 模型训练
 
 启动容器进行训练
@@ -127,6 +127,8 @@ docker-compose logs trainer -f
 ```shell
 docker-compose run trainer yolo export model=runs/detect/train/weights/best.pt format=onnx
 ```
+
+`.onnx`模型会保存在`yolo/runs/detect/train/weights/`目录下。
 
 ## 模型使用
 
