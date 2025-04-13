@@ -21,6 +21,7 @@ lang: ""
 
 你需要先在`AtomGit`上注册一个账号，并创建一个仓库，用于部署静态博客的站点构建文件。并且，该仓库需要开启`Pages`服务。参考[AtomGit Pages](https://docs.atomgit.com/app/pageshelp)。
 
+> [!NOTE]
 > 开启Pages服务后，AtomGit会自动为你的仓库分配一个uri，例如`https://<username>.atomgit.net/<repo-name>`。你可以通过这个url来访问你的静态博客。
 
 ## Github
@@ -189,7 +190,9 @@ export default defineConfig({
     // ...
 })
 ```
-将 `base` 修改为你的仓库名称，将 `site` 修改为你的用户名。例如，如果你的用户名是 `lorenzofeng`，仓库名称是 `blog`，那么 `base` 应该是 `/blog`，`site` 应该是 `https://lorenzofeng.atomgit.net`。
+
+将 `base` 修改为你的仓库名称，将 `<username>` 修改为你的用户名。例如，如果你的用户名是 `lorenzofeng`，仓库名称是 `blog`，那么 `base` 应该是 `/blog`，`site` 应该是 `https://lorenzofeng.atomgit.net`。
+
 
 在根目录新建 `.github/workflows/astro.yml`， 并写入以下内容
 

@@ -1,8 +1,6 @@
-FROM node:20-alpine AS builder
+
+FROM node:20-alpine AS base
 LABEL authors="Lorenzo Feng"
-
-
-RUN apk add --no-cache git
 
 WORKDIR /app
 
@@ -14,9 +12,17 @@ RUN pnpm install
 
 COPY . .
 
+FROM base AS preview
+
+CMD ["pnpm", "dev", "--host"]
+
+FROM base AS builder
+
 RUN pnpm run build
 
 FROM builder AS uploader
+
+RUN apk add --no-cache git
 
 
 ARG USER
