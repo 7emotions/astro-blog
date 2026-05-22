@@ -1,6 +1,7 @@
 ---
 import path from 'node:path'
 import { getCollection } from 'astro:content'
+import type { ImageMetadata } from 'astro'
 import License from '@components/misc/License.astro'
 import Markdown from '@components/misc/Markdown.astro'
 import I18nKey from '@i18n/i18nKey'
@@ -44,8 +45,31 @@ const jsonLd = {
   inLanguage: (entry.data.lang ? entry.data.lang.replace('_', '-') : siteConfig.lang.replace('_', '-')),
   // TODO include cover image here
 }
+
+// Resolve post cover image to absolute URL for OG tags
+// Post images in frontmatter can be: full URL, site-relative (/xxx), or relative to post directory (./xxx)
+const postImages = import.meta.glob<ImageMetadata>(
+  '../../content/posts/**/*.{png,jpg,jpeg,gif,webp,svg}',
+  { import: 'default' },
+)
+let ogBanner: string | undefined
+if (entry.data.image) {
+  if (entry.data.image.startsWith('http://') || entry.data.image.startsWith('https://') || entry.data.image.startsWith('/')) {
+    ogBanner = entry.data.image
+  } else {
+    // Relative path: resolve against the post's content directory
+    // entry.data.image is like './labels.jpg', getDir returns e.g. 'yolov10s/'
+    const postDir = getDir(entry.id)
+    const resolvedPath = `../../content/posts/${postDir}${entry.data.image.replace(/^\.\//, '')}`
+    const loader = postImages[resolvedPath]
+    if (loader) {
+      const img = await loader()
+      ogBanner = img.src
+    }
+  }
+}
 ---
-<MainGridLayout banner={entry.data.image} title={entry.data.title} description={entry.data.description} lang={entry.data.lang} setOGTypeArticle={true} headings={headings}>
+<MainGridLayout banner={ogBanner || entry.data.image} title={entry.data.title} description={entry.data.description} lang={entry.data.lang} setOGTypeArticle={true} headings={headings}>
     <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
     <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative mb-4">
         <div id="post-container" class:list={["card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full ",

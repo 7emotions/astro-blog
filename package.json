@@ -10,6 +10,7 @@
     "astro": "astro",
     "type-check": "tsc --noEmit --isolatedDeclarations",
     "new-post": "node scripts/new-post.js",
+    "ship": "bash scripts/deploy.sh",
     "format": "biome format --write ./src",
     "lint": "biome check --apply ./src",
     "preinstall": "npx only-allow pnpm"

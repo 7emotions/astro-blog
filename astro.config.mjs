@@ -21,7 +21,7 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://lorenzofeng.cc",
+  site: "https://lorenzofeng.top",
   base: "/",
   trailingSlash: "always",
   integrations: [
@@ -57,6 +57,7 @@ export default defineConfig({
     Compress({
       CSS: false,
       Image: false,
+      HTML: false,
       Action: {
         Passed: async () => true, // https://github.com/PlayForm/Compress/issues/376
       },

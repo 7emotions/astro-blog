@@ -25,3 +25,10 @@ pnpm-debug.log*
 package-lock.json
 bun.lockb
 yarn.lock
+
+# Playwright browser automation
+.playwright-mcp/
+
+# Preview screenshots
+/homepage-preview.png
+/post-preview.png
