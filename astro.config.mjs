@@ -69,12 +69,6 @@ export default defineConfig({
       type: "shiki",
       excludeLangs: ["mermaid"],
     },
-    shikiConfig: {
-      themes: {
-        light: "github-light",
-        dark: "github-dark",
-      },
-    },
     remarkPlugins: [
       remarkMath,
       remarkReadingTime,
