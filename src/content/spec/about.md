@@ -2,49 +2,37 @@
 
 Hi，我是 [Lorenzo Feng](https://github.com/7emotions)。
 
-一名 NJUST 的本科生，目前和胡东哲、郭嘉俊、吕锦波等南京 OPC 企业青年创始人一起在 [南京青赋科技有限公司](https://qm.qq.com/q/vssGttVZkY) 创业，方向是具身智能，担任 CTO。
+NJUST 在读本科生。目前在和胡东哲、郭嘉俊、吕锦波等南京 OPC 企业的杰出青年创始人一起创业。目前在南京青赋科技有限公司担任CTO，方向是具身智能。
 
-我对一切新鲜事物都充满好奇，梦想是成为一个很酷的人。折腾过很多东西，没什么精通的，但什么都会一点。
+此前在 NJUST RoboMaster Alliance 工作室做视觉方向的算法工作，主要折腾目标检测和自瞄相关的东西，算是我在机器人和工程落地上的启蒙经历。
+
+对新事物永远保持好奇，梦想是成为一个很酷的人。折腾过不少领域，虽然什么都知道一点，但还没精通过什么。
 
 ## Tech Stack
 
-![Python](https://img.shields.io/badge/-Python-05122A?style=flat&logo=python)
-![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript)
-![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
-![Vue.js](https://img.shields.io/badge/-Vue.js-05122A?style=flat&logo=vue.js)
-![Node.js](https://img.shields.io/badge/-Node.js-05122A?style=flat&logo=node.js)
-![Java](https://img.shields.io/badge/-Java-05122A?style=flat&logo=java)
-![SpringBoot](https://img.shields.io/badge/-SpringBoot-05122A?style=flat&logo=springboot)
-![Django](https://img.shields.io/badge/-Django-05122A?style=flat&logo=django)
-![Rust](https://img.shields.io/badge/-Rust-05122A?style=flat&logo=rust)
-![Kotlin](https://img.shields.io/badge/-Kotlin-05122A?style=flat&logo=kotlin)
-![C/C++](https://img.shields.io/badge/-C/C++-05122A?style=flat&logo=cplusplus)
-![C#](https://img.shields.io/badge/-CSharp-05122A?style=flat&logo=dotnet)
-![Swift](https://img.shields.io/badge/-Swift-05122A?style=flat&logo=swift)
-![PHP](https://img.shields.io/badge/-PHP-05122A?style=flat&logo=php)
-![Docker](https://img.shields.io/badge/-Docker-05122A?style=flat&logo=Docker)
-![GitHub Actions](https://img.shields.io/badge/-GitHub%20Actions-05122A?style=flat&logo=githubactions)
-![OpenCV](https://img.shields.io/badge/-OpenCV-05122A?style=flat&logo=opencv)
-![TensorFlow](https://img.shields.io/badge/-TensorFlow-05122A?style=flat&logo=tensorflow)
-![STM32](https://img.shields.io/badge/-STM32-05122A?style=flat&logo=stmicroelectronics)
-![ESP32](https://img.shields.io/badge/-ESP32-05122A?style=flat&logo=espressif)
-![Arduino](https://img.shields.io/badge/-Arduino-05122A?style=flat&logo=arduino)
-![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
-![CSS3](https://img.shields.io/badge/-CSS3-05122A?style=flat&logo=css)
+**语言 & 框架**：Python、TypeScript / JavaScript、Java、C / C++、C#、Rust、Kotlin、Swift、PHP、Shell
+
+**前端**：Vue.js、React、HTML5、CSS3
+
+**后端**：SpringBoot、Django、Node.js
+
+**AI / CV**：OpenCV、TensorFlow、PyTorch、NumPy、Pandas
+
+**嵌入式**：STM32、ESP32、Arduino、FreeRTOS
+
+**运维 & 工具**：Docker、GitHub Actions、Linux 日常使用
 
 ## Operating System
 
-![Debian](https://img.shields.io/badge/-Debian-05122A?style=flat&logo=debian)
-![Ubuntu](https://img.shields.io/badge/-Ubuntu-05122A?style=flat&logo=Ubuntu)
-![Windows](https://img.shields.io/badge/-Windows-05122A?style=flat&logo=windows)
-![macOS](https://img.shields.io/badge/-macOS-05122A?style=flat&logo=apple)
-![Android](https://img.shields.io/badge/-Android-05122A?style=flat&logo=android)
-![Alpine Linux](https://img.shields.io/badge/-Alpine_Linux-05122A?style=flat&logo=alpine-linux)
-![Kali Linux](https://img.shields.io/badge/-Kali_Linux-05122A?style=flat&logo=kalilinux)
+**桌面**：Debian / Ubuntu（主力）、Windows（游戏）、macOS
+
+**移动**：Android
+
+**容器 & 其他**：Alpine Linux、Kali Linux
 
 ## About This Blog
 
-这里记录一些学习笔记、踩坑记录和随想。博客基于 [Fuwari](https://github.com/saicaca/fuwari)（Astro）构建，部署在自己服务器上。
+这里随手记录一些学习笔记、踩坑经历和日常随想。博客基于 [Fuwari](https://github.com/saicaca/fuwari) 构建，跑在自己的服务器上。
 
 ::github{repo="7emotions/astro-blog"}
 
